@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+  <header class="app-header">
+    <h1>Student Registration</h1>
+    <button id="themeToggleBtn" class="toggle-btn">Light Mode</button>
+  </header>
+
+  <main class="container">
+    <!-- Left Column: Registration Form -->
+    <section class="card form-card">
+      <h2>Registration Form</h2>
+      <form id="registrationForm" novalidate>
+        
+        <!-- Full Name Field -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter full name">
+          <span class="error-message" id="fullNameError"></span>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter email address">
+          <span class="error-message" id="emailError"></span>
+        </div>
+
+        <!-- Program Dropdown -->
+        <div class="form-group">
+          <label for="program">Program</label>
+          <select id="program">
+            <option value="">-- Select Program --</option>
+            <option value="BS Computer Science">BS Computer Science</option>
+            <option value="BS Software Engineering">BS Software Engineering</option>
+            <option value="BS Data Science">BS Data Science</option>
+            <option value="BS Information Technology">BS Information Technology</option>
+          </select>
+          <span class="error-message" id="programError"></span>
+        </div>
+
+        <!-- Semester Input -->
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <input type="number" id="semester" placeholder="1 - 8" min="1" max="8">
+          <span class="error-message" id="semesterError"></span>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-submit">Register Student</button>
+      </form>
+    </section>
+
+    <!-- Right Column: Live Preview & Registered List -->
+    <section class="card preview-card">
+      <h2>Live Preview Card</h2>
+      
+      <!-- Live Card Badge Preview -->
+      <div class="preview-badge">
+        <h3 id="previewName">Student Name</h3>
+        <div class="preview-row">
+          <span>Email</span>
+          <span id="previewEmail" class="preview-val">—</span>
+        </div>
+        <div class="preview-row">
+          <span>Program</span>
+          <span id="previewProgram" class="preview-val">—</span>
+        </div>
+        <div class="preview-row">
+          <span>Semester</span>
+          <span id="previewSemester" class="preview-val">—</span>
+        </div>
+      </div>
+
+      <!-- Registered Students List -->
+      <div class="registered-section">
+        <h3>Registered Students (<span id="studentCount">0</span>)</h3>
+        <ul id="registeredList" class="student-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
